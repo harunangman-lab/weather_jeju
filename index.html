@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#edf4ed">
+  <title>지금 제주 날씨는?</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="heading">
+      <span class="eyebrow">JEJU, RIGHT NOW</span>
+      <h1>지금 제주 날씨는?</h1>
+      <p>제주의 오늘을, 가볍게 확인하세요.</p>
+    </header>
+
+    <section class="weather-card" aria-label="제주 현재 날씨" aria-busy="false" id="weather-card">
+      <div class="card-top"><span class="location"><span aria-hidden="true">⌖</span> 제주도 · 제주시</span><span class="badge" id="badge">연결 대기</span></div>
+      <div class="weather-main">
+        <div class="weather-symbol" id="weather-symbol" aria-hidden="true">☀</div>
+        <div class="temperature"><span id="temperature">—</span><span class="unit">°C</span></div>
+        <p class="condition" id="condition">제주 날씨를 만나보세요</p>
+      </div>
+      <div class="details">
+        <div><span class="detail-label">습도</span><strong id="humidity">— %</strong></div>
+        <div><span class="detail-label">데이터 업데이트 · 한국 시간</span><strong class="updated" id="updated">—</strong></div>
+      </div>
+      <button class="refresh" id="refresh" type="button"><span class="refresh-icon" aria-hidden="true">↻</span> <span id="refresh-label">새로고침</span></button>
+      <p class="status" id="status" role="status" aria-live="polite">아래에 API 키를 입력하면 현재 날씨를 불러옵니다.</p>
+    </section>
+
+    <details class="settings" id="settings" open>
+      <summary>WeatherAPI 연결 설정</summary>
+      <form id="key-form">
+        <label for="api-key">WeatherAPI API 키</label>
+        <div class="key-row"><input id="api-key" name="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="API 키를 입력하세요" required><button type="submit" id="connect">연결하기</button></div>
+        <label class="remember"><input type="checkbox" id="remember"> 이 브라우저에 키 저장</label>
+        <p class="hint"><a href="https://www.weatherapi.com/my/" target="_blank" rel="noopener noreferrer">WeatherAPI.com에서 키 확인 ↗</a><br>키는 WeatherAPI 요청에 사용됩니다. 저장을 선택하면 이 브라우저에 보관됩니다. 공용 PC에서는 저장하지 마세요.</p>
+      </form>
+    </details>
+    <footer>제주시 좌표 기준 · 날씨 데이터 <a href="https://www.weatherapi.com/" target="_blank" rel="noopener noreferrer">WeatherAPI.com ↗</a></footer>
+  </main>
+</body>
+</html>
